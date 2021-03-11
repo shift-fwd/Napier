@@ -11,7 +11,7 @@ pipeline {
             steps {
                 sh "${env.GRADLE_CMD} clean build"
                 script {
-                    env.NEW_VERSION = "${sh(returnStdout: true, script: "${env.GRADLE_CMD} -q printVersion -P release")}".trim()
+                    env.NEW_VERSION = "${sh(returnStdout: true, script: "${env.GRADLE_CMD}  -P release")}".trim()
                 }
             }
         }
