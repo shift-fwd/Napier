@@ -1,5 +1,6 @@
 import dependencies.Dep
 
+
 buildscript {
     repositories {
         google()
@@ -11,7 +12,6 @@ buildscript {
 
     dependencies {
         classpath Dep.GradlePlugin.kotlin
-        classpath Dep.GradlePlugin.android
 
         // for upload bintray plugin
         classpath Dep.GradlePlugin.bintray
@@ -23,6 +23,7 @@ buildscript {
 }
 
 allprojects {
+
     repositories {
         google()
         jcenter()

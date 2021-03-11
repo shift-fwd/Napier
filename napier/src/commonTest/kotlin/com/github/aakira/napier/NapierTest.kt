@@ -21,7 +21,7 @@ class NapierTest {
     private data class CustomThrowable(override val message: String) : Throwable(message)
 
     @Test
-    fun `Check output log`() {
+    fun foo() {
         val output = ArrayList<Expected>()
         Napier.base(object : Antilog() {
             override fun performLog(priority: Napier.Level, tag: String?, throwable: Throwable?, message: String?) {

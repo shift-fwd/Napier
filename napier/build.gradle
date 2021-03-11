@@ -1,22 +1,14 @@
 import dependencies.Dep
 import org.jetbrains.kotlin.gradle.tasks.Kotlin2JsCompile
 
-apply plugin: 'com.android.library'
 apply plugin: 'kotlin-multiplatform'
-apply from: 'android.gradle'
 
 apply from: rootProject.file('gradle/publish.gradle')
 
+
+
 kotlin {
-    android {
-        publishAllLibraryVariants()
-    }
-    ios() {
-        binaries {
-            framework()
-        }
-    }
-    js() {
+    js(IR) {
         browser()
         nodejs()
         compilations.all {
@@ -41,23 +33,6 @@ kotlin {
 
                 implementation Dep.Test.common
                 implementation Dep.Test.annotation
-            }
-        }
-        androidMain {
-            dependencies {
-            }
-        }
-        androidTest {
-            dependencies {
-                implementation Dep.Test.jvm
-            }
-        }
-        iosMain {
-            dependencies {
-            }
-        }
-        iosTest {
-            dependencies {
             }
         }
         jsMain {
