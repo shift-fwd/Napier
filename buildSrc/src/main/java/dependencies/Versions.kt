@@ -2,7 +2,7 @@ package dependencies
 
 object Versions {
     const val versionCode = 14
-    const val versionName = "1.4.1"
+    const val versionName = "1.4.1-HACK"
 
     // android
     const val androidVersionCode = 1
